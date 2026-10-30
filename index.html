@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>Dangky12a7 | Không ngừng vươn xa</title>
+
+<style>
+/* ===== CÀI ĐẶT CHUNG ===== */
+:root {
+    --bg: #111111;
+    --card: #1c1c1c;
+    --yellow: #f5c518;
+    --white: #ffffff;
+    --gray: #aaaaaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.highlight {
+    color: var(--yellow);
+}
+
+section {
+    padding: 85px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* ===== THANH ĐIỀU HƯỚNG ===== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(17,17,17,0.95);
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--yellow);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--yellow);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== TRANG CHỦ ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    background:
+      radial-gradient(circle at 80% 40%, #3b3010 0%, transparent 35%),
+      #111;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-label {
+    display: inline-block;
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    color: var(--gray);
+    font-size: 17px;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 7px;
+    background: var(--yellow);
+    color: #111;
+    font-weight: bold;
+    transition: .3s;
+    border: 1px solid var(--yellow);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--yellow);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--yellow);
+    margin-left: 10px;
+}
+
+.btn-outline:hover {
+    background: var(--yellow);
+    color: #111;
+}
+
+/* ===== THÔNG TIN ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-box {
+    background: var(--card);
+    padding: 35px;
+    border-radius: 15px;
+    border-left: 4px solid var(--yellow);
+}
+
+.about-box h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: var(--gray);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.stat {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat h2 {
+    color: var(--yellow);
+    font-size: 32px;
+}
+
+.stat p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+/* ===== MÔN HỌC ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--card);
+    padding: 28px;
+    border-radius: 13px;
+    border: 1px solid #333;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--yellow);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--yellow);
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.card a {
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ===== TÀI LIỆU ===== */
+.search-box {
+    max-width: 500px;
+    margin: 0 auto 35px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    background: var(--card);
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--yellow);
+}
+
+.document {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.document span {
+    color: var(--yellow);
+    font-size: 25px;
+}
+
+/* ===== THÀNH VIÊN ===== */
+.member {
+    text-align: center;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    background: #302a15;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+}
+
+.member h3 {
+    color: var(--yellow);
+}
+
+/* ===== LIÊN HỆ ===== */
+.contact-box {
+    background: var(--card);
+    max-width: 650px;
+    padding: 35px;
+    margin: auto;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.contact-box p {
+    color: var(--gray);
+    margin: 15px 0 25px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+    color: var(--gray);
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--yellow);
+}
+
+/* ===== HIỆU ỨNG ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .7s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #191919;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 15px 5%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 13px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+}
+
+@media(max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .btn {
+        margin: 5px 0;
+    }
+
+    .document {
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container navbar">
+        <a href="#home" class="logo">
+            DANGKY<span>12A7</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn"
+        aria-label="Mở menu" aria-expanded="false">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#subjects">Môn học</a></li>
+            <li><a href="#documents">Tài liệu</a></li>
+            <li><a href="#members">Thành viên</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content reveal">
+
+            <span class="hero-label">
+                WELCOME TO DANGKY12A7
+            </span>
+
+            <h1>
+                HỌC TẬP.<br>
+                KẾT NỐI.<br>
+                <span class="highlight">TỎA SÁNG.</span>
+            </h1>
+
+            <p>
+                Chào mừng bạn đến với không gian học tập
+                và kết nối của tập thể 12A7. Nơi lưu giữ
+                kiến thức, kỷ niệm và những hành trình
+                đáng nhớ của tuổi học trò.
+            </p>
+
+            <a href="#about" class="btn">
+                Khám phá ngay →
+            </a>
+
+            <a href="#subjects" class="btn btn-outline">
+                Xem môn học
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- GIỚI THIỆU -->
+<section id="about">
+    <div class="container">
+
+        <h2 class="section-title reveal">
+            VỀ <span class="highlight">CHÚNG TÔI</span>
+        </h2>
+
+        <p class="section-desc reveal">
+            Một tập thể – Một hành trình – Một thanh xuân.
+        </p>
+
+        <div class="about-grid">
+
+            <div class="about-box reveal">
+                <h3>Xin chào, chúng mình là 12A7!</h3>
+
+                <p>
+                    Dangky12a7 là website được xây dựng
+                    nhằm tạo ra một không gian học tập,
+                    chia sẻ tài liệu và lưu giữ những
+                    khoảnh khắc đáng nhớ của tập thể lớp.
+                    <br><br>
+                    Chúng mình tin rằng mỗi bài học,
+                    mỗi thử thách và mỗi kỷ niệm đều
+                    góp phần tạo nên một thanh xuân
+                    thật đáng nhớ.
+                </p>
+            </div>
+
+            <div class="stats reveal">
+
+                <div class="stat">
+                    <h2>12A7</h2>
+                    <p>Tập thể lớp</p>
+                </div>
+
+                <div class="stat">
+                    <h2>∞</h2>
+                    <p>Ước mơ</p>
+                </div>
+
+                <div class="stat">
+                    <h2>100%</h2>
+                    <p>Nhiệt huyết</p>
+                </div>
+
+                <div class="stat">
+                    <h2>1</h2>
+                    <p>Đại gia đình</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MÔN HỌC -->
+<section id="subjects">
+    <div class="container">
+
+        <h2 class="section-title reveal">
+            KHÔNG GIAN <span class="highlight">HỌC TẬP</span>
+        </h2>
+
+        <p class="section-desc reveal">
+            Khám phá kiến thức qua từng môn học.
+        </p>
+
+        <div class="grid">
+
+            <div class="card reveal">
+                <div class="card-icon">📐</div>
+                <h3>Toán học</h3>
+                <p>Công thức, bài tập và kiến thức toán học.</p>
+                <a href="#documents">Khám phá →</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-icon">📖</div>
+                <h3>Ngữ văn</h3>
+                <p>Phân tích tác phẩm và tài liệu ôn tập.</p>
+                <a href="#documents">Khám phá →</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-icon">🌍</div>
+                <h3>Tiếng Anh</h3>
+                <p>Từ vựng, ngữ pháp và kỹ năng tiếng Anh.</p>
+                <a href="#documents">Khám phá →</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-icon">⚛️</div>
+                <h3>Vật lý</h3>
+                <p>Các định luật và kiến thức vật lý.</p>
+                <a href="#documents">Khám phá →</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-icon">🧪</div>
+                <h3>Hóa học</h3>
+                <p>Phản ứng, phương trình và bài tập hóa học.</p>
+                <a href="#documents">Khám phá →</a>
+            </div>
+
+            <div class="card reveal">
+                <div class="card-icon">🧬</div>
+                <h3>Sinh học</h3>
+                <p>Khám phá thế giới sinh vật và sự sống.</p>
+                <a href="#documents">Khám phá →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TÀI LIỆU -->
+<section id="documents">
+    <div class="container">
+
+        <h2 class="section-title reveal">
+            KHO <span class="highlight">TÀI LIỆU</span>
+        </h2>
+
+        <p class="section-desc reveal">
+            Tìm kiếm tài liệu học tập nhanh chóng.
+        </p>
+
+        <div class="search-box reveal">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Tìm kiếm tài liệu..."
+                aria-label="Tìm kiếm tài liệu"
+            >
+        </div>
+
+        <div class="grid" id="documentList">
+
+            <div class="card document reveal"
+                 data-name="toán học công thức">
+                <div>
+                    <h3>📐 Công thức Toán</h3>
+                    <p>Tổng hợp công thức quan trọng.</p>
+                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                </div>
+                <span>PDF</span>
+            </div>
+
+            <div class="card document reveal"
+                 data-name="ngữ văn tác phẩm">
+                <div>
+                    <h3>📖 Tài liệu Ngữ văn</h3>
+                    <p>Tổng hợp kiến thức và tác phẩm.</p>
+                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                </div>
+                <span>PDF</span>
+            </div>
+
+            <div class="card document reveal"
+                 data-name="tiếng anh từ vựng">
+                <div>
+                    <h3>🌍 Tiếng Anh</h3>
+                    <p>Ngữ pháp và từ vựng.</p>
+                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                </div>
+                <span>PDF</span>
+            </div>
+
+            <div class="card document reveal"
+                 data-name="vật lý bài tập">
+                <div>
+                    <h3>⚛️ Bài tập Vật lý</h3>
+                    <p>Bài tập và lời giải tham khảo.</p>
+                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                </div>
+                <span>PDF</span>
+            </div>
+
+            <div class="card document reveal"
+                 data-name="hóa học phương trình">
+                <div>
+                    <h3>🧪 Hóa học</h3>
+                    <p>Phương trình và bài tập hóa học.</p>
+                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                </div>
+                <span>PDF</span>
+            </div>
+
+            <div class="card document reveal"
+                 data-name="sinh học kiến thức">
+                <div>
+                    <h3>🧬 Sinh học</h3>
+                    <p>Kiến thức sinh học tổng hợp.</p>
+                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                </div>
+                <span>PDF</span>
+            </div>
+
+        </div>
+
+        <p id="emptyMessage" style="display:none;text-align:center;color:#aaa;margin-top:25px;">
+            Không tìm thấy tài liệu phù hợp.
+        </p>
+
+    </div>
+</section>
+
+<!-- THÀNH VIÊN -->
+<section id="members">
+    <div class="container">
+
+        <h2 class="section-title reveal">
+            DẤU ẤN <span class="highlight">12A7</span>
+        </h2>
+
+        <p class="section-desc reveal">
+            Mỗi thành viên là một màu sắc riêng.
+        </p>
+
+        <div class="grid">
+
+            <div class="card member reveal">
+                <div class="avatar">👑</div>
+                <h3>Ban cán sự</h3>
+                <p>Đồng hành và dẫn dắt tập thể.</p>
+            </div>
+
+            <div class="card member reveal">
+                <div class="avatar">📚</div>
+                <h3>Nhóm học tập</h3>
+                <p>Cùng nhau chia sẻ kiến thức.</p>
+            </div>
+
+            <div class="card member reveal">
+                <div class="avatar">⭐</div>
+                <h3>Thành viên 12A7</h3>
+                <p>Cùng tạo nên thanh xuân rực rỡ.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- LIÊN HỆ -->
+<section id="contact">
+    <div class="container">
+
+        <h2 class="section-title reveal">
+            KẾT NỐI <span class="highlight">VỚI CHÚNG MÌNH</span>
+        </h2>
+
+        <p class="section-desc reveal">
+            Cùng nhau học tập và phát triển.
+        </p>
+
+        <div class="contact-box reveal">
+            <h2>WELCOME TO <span class="highlight">12A7</span></h2>
+
+            <p>
+                Cảm ơn bạn đã ghé thăm website
+                Dangky12a7. Hãy cùng nhau viết tiếp
+                những kỷ niệm tuyệt đẹp!
+            </p>
+
+            <a href="#home" class="btn">
+                Quay về đầu trang ↑
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>
+            © 2026 <span>DANGKY12A7</span> |
+            Designed with ❤️
+        </p>
+        <p>Học tập hôm nay – Thành công ngày mai.</p>
+    </div>
+</footer>
+
+<script>
+// ===== MENU ĐIỆN THOẠI =====
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", isOpen);
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+    });
+});
+
+// ===== TÌM KIẾM TÀI LIỆU =====
+const searchInput = document.getElementById("searchInput");
+const documents = document.querySelectorAll(".document");
+const emptyMessage = document.getElementById("emptyMessage");
+
+searchInput.addEventListener("input", () => {
+    const keyword = searchInput.value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d");
+
+    let count = 0;
+
+    documents.forEach(doc => {
+        const name = (
+            doc.dataset.name + " " + doc.innerText
+        ).toLowerCase()
+         .normalize("NFD")
+         .replace(/[\u0300-\u036f]/g, "")
+         .replace(/đ/g, "d");
+
+        const matched = name.includes(keyword);
+
+        doc.style.display = matched ? "" : "none";
+
+        if (matched) count++;
+    });
+
+    emptyMessage.style.display = count ? "none" : "block";
+});
+
+// ===== HIỆU ỨNG XUẤT HIỆN =====
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(item => {
+    observer.observe(item);
+});
+
+// ===== NĂM TỰ ĐỘNG =====
+document.querySelector("footer p").innerHTML =
+    `© ${new Date().getFullYear()} <span>DANGKY12A7</span> | Designed with ❤️`;
+
+</script>
+
+</body>
+</html>
