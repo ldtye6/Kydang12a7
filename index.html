@@ -362,6 +362,35 @@ footer span {
     transform: translateY(0);
 }
 
+/* ===== TRUNG TÂM HỌC TẬP ===== */
+.subject-grid .card { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+.subject-card .btn { margin-top:auto; font-size:13px; padding:10px 14px; }
+.study-layout { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
+.study-panel { background:var(--card); border:1px solid rgba(120,190,255,.2); border-radius:18px; padding:26px; box-shadow:0 12px 32px rgba(0,0,0,.12); }
+.study-panel h3 { margin-bottom:18px; color:var(--white); }
+.study-panel label { display:flex; flex-direction:column; gap:7px; color:var(--gray); font-size:14px; }
+.study-panel input,.study-panel select,.study-panel textarea { width:100%; border:1px solid #355574; background:#08192c; color:var(--white); border-radius:10px; padding:12px; font:inherit; }
+.study-panel form { display:grid; gap:14px; }
+.study-guide ol { padding-left:22px; color:var(--gray); display:grid; gap:12px; }
+.study-guide strong { color:var(--white); }
+.mini-callout,.source-note { color:var(--gray); font-size:13px; margin-top:16px; }
+.source-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.source-grid a { display:flex; flex-direction:column; gap:5px; border:1px solid #2b4967; border-radius:12px; padding:15px; background:rgba(10,34,57,.55); }
+.source-grid a:hover { border-color:var(--yellow); transform:translateY(-2px); }
+.source-grid span { color:var(--gray); font-size:13px; }
+.homework-form { grid-template-columns:1fr 2fr 1fr auto; align-items:end; }
+.homework-list { display:grid; gap:10px; margin-top:18px; }
+.homework-item { display:flex; align-items:center; gap:12px; padding:13px; background:#0b1c30; border:1px solid #294764; border-radius:12px; }
+.homework-item.done { opacity:.65; }
+.homework-item.done .homework-title { text-decoration:line-through; }
+.homework-title { flex:1; overflow-wrap:anywhere; }
+.homework-meta { display:block; color:var(--gray); font-size:12px; }
+.homework-item button,.homework-item input { flex-shrink:0; }
+.grow { flex:1; }
+.study-panel .tools-row { align-items:stretch; }
+@media(max-width:850px) { .study-layout { grid-template-columns:1fr; } .homework-form { grid-template-columns:1fr 1fr; } }
+@media(max-width:560px) { .source-grid { grid-template-columns:1fr; } .homework-form { grid-template-columns:1fr; } .study-panel { padding:18px; } .homework-item { align-items:flex-start; flex-wrap:wrap; } }
+
 /* ===== RESPONSIVE ===== */
 @media(max-width: 768px) {
     .menu-btn {
@@ -515,6 +544,7 @@ section[id] { scroll-margin-top:90px; }
             <li><a href="#home">Trang chủ</a></li>
             <li><a href="#about">Giới thiệu</a></li>
             <li><a href="#subjects">Môn học</a></li>
+            <li><a href="#study">Học tập</a></li>
             <li><a href="#documents">Tài liệu</a></li>
             <li><a href="#members">Thành viên</a></li>
             <li><a href="#contact">Liên hệ</a></li>
@@ -638,52 +668,134 @@ section[id] { scroll-margin-top:90px; }
             Khám phá kiến thức qua từng môn học.
         </p>
 
-        <div class="grid">
-
-            <div class="card reveal">
+        <div class="grid subject-grid">
+            <article class="card subject-card reveal">
                 <div class="card-icon">📐</div>
                 <h3>Toán học</h3>
-                <p>Công thức, bài tập và kiến thức toán học.</p>
-                <a href="#documents">Khám phá →</a>
-            </div>
-
-            <div class="card reveal">
+                <p>Đại số, hình học, giải tích, xác suất và bài tập vận dụng.</p>
+                <button class="btn subject-open" type="button" data-subject="math">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
                 <div class="card-icon">📖</div>
                 <h3>Ngữ văn</h3>
-                <p>Phân tích tác phẩm và tài liệu ôn tập.</p>
-                <a href="#documents">Khám phá →</a>
-            </div>
-
-            <div class="card reveal">
+                <p>Đọc hiểu, nghị luận, tác phẩm và kỹ năng viết.</p>
+                <button class="btn subject-open" type="button" data-subject="literature">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
                 <div class="card-icon">🌍</div>
                 <h3>Tiếng Anh</h3>
-                <p>Từ vựng, ngữ pháp và kỹ năng tiếng Anh.</p>
-                <a href="#documents">Khám phá →</a>
-            </div>
-
-            <div class="card reveal">
+                <p>Từ vựng, ngữ pháp, đọc hiểu và luyện đề.</p>
+                <button class="btn subject-open" type="button" data-subject="english">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
                 <div class="card-icon">⚛️</div>
                 <h3>Vật lý</h3>
-                <p>Các định luật và kiến thức vật lý.</p>
-                <a href="#documents">Khám phá →</a>
-            </div>
-
-            <div class="card reveal">
+                <p>Cơ học, điện, từ, quang học và bài tập.</p>
+                <button class="btn subject-open" type="button" data-subject="physics">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
                 <div class="card-icon">🧪</div>
                 <h3>Hóa học</h3>
-                <p>Phản ứng, phương trình và bài tập hóa học.</p>
-                <a href="#documents">Khám phá →</a>
-            </div>
-
-            <div class="card reveal">
+                <p>Hóa vô cơ, hữu cơ, phản ứng và tính toán.</p>
+                <button class="btn subject-open" type="button" data-subject="chemistry">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
                 <div class="card-icon">🧬</div>
                 <h3>Sinh học</h3>
-                <p>Khám phá thế giới sinh vật và sự sống.</p>
-                <a href="#documents">Khám phá →</a>
-            </div>
-
+                <p>Tế bào, di truyền, tiến hóa và sinh thái.</p>
+                <button class="btn subject-open" type="button" data-subject="biology">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
+                <div class="card-icon">🏛️</div>
+                <h3>Lịch sử</h3>
+                <p>Lịch sử Việt Nam và thế giới, mốc sự kiện.</p>
+                <button class="btn subject-open" type="button" data-subject="history">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
+                <div class="card-icon">🌏</div>
+                <h3>Địa lý</h3>
+                <p>Tự nhiên, dân cư, kinh tế và kỹ năng Atlat.</p>
+                <button class="btn subject-open" type="button" data-subject="geography">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
+                <div class="card-icon">⚖️</div>
+                <h3>Giáo dục kinh tế & pháp luật</h3>
+                <p>Kiến thức công dân, kinh tế và pháp luật.</p>
+                <button class="btn subject-open" type="button" data-subject="civics">Mở ngăn môn học →</button>
+            </article>
+            <article class="card subject-card reveal">
+                <div class="card-icon">💻</div>
+                <h3>Tin học</h3>
+                <p>Thuật toán, lập trình và kỹ năng số.</p>
+                <button class="btn subject-open" type="button" data-subject="informatics">Mở ngăn môn học →</button>
+            </article>
         </div>
     </div>
+</section>
+
+<!-- TRUNG TÂM HỌC TẬP -->
+<section id="study">
+  <div class="container">
+    <h2 class="section-title reveal">TRUNG TÂM <span class="highlight">HỌC TẬP</span></h2>
+    <p class="section-desc reveal">Chọn môn, lớp và chủ đề để tìm bài học, kiến thức, công thức và nguồn ôn thi THPT/đại học.</p>
+    <div class="study-layout">
+      <aside class="study-panel reveal">
+        <h3>🔎 Tìm kiến thức từ nguồn tin cậy</h3>
+        <form id="studySearchForm">
+          <label>Môn học<select id="studySubject" required>
+            <option value="math">Toán học</option><option value="literature">Ngữ văn</option><option value="english">Tiếng Anh</option><option value="physics">Vật lý</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="history">Lịch sử</option><option value="geography">Địa lý</option><option value="civics">Giáo dục kinh tế & pháp luật</option><option value="informatics">Tin học</option>
+          </select></label>
+          <label>Phạm vi<select id="studyGrade"><option value="lớp 10">Lớp 10</option><option value="lớp 11">Lớp 11</option><option value="lớp 12">Lớp 12</option><option value="ôn thi tốt nghiệp THPT">Ôn thi tốt nghiệp THPT</option><option value="ôn thi đại học">Ôn thi đại học</option></select></label>
+          <label>Chủ đề / bài học<input id="studyTopic" required maxlength="160" placeholder="Ví dụ: đạo hàm, phản ứng oxi hóa khử..."></label>
+          <button class="btn" type="submit">Tìm trong nguồn đã chọn ↗</button>
+        </form>
+        <p class="source-note">Tìm kiếm sẽ mở kết quả trên các website nguồn. Trang không sao chép nội dung có bản quyền và không yêu cầu đăng nhập tài khoản nguồn.</p>
+      </aside>
+      <div class="study-panel study-guide reveal">
+        <h3>🧭 Cách học / làm bài</h3>
+        <ol>
+          <li><strong>Nắm yêu cầu:</strong> ghi rõ đề hỏi gì, dữ kiện nào đã cho.</li>
+          <li><strong>Ôn nền tảng:</strong> tra định nghĩa, định lý, công thức hoặc khái niệm liên quan.</li>
+          <li><strong>Lập hướng giải:</strong> chia bài thành các bước nhỏ, chọn phương pháp phù hợp.</li>
+          <li><strong>Tự làm trước:</strong> ghi lời giải và kiểm tra từng bước; chỉ xem gợi ý sau khi đã thử.</li>
+          <li><strong>Rút kinh nghiệm:</strong> lưu lỗi sai và ôn lại sau 1 ngày, 1 tuần.</li>
+        </ol>
+        <div class="mini-callout">Mẹo: với câu hỏi trắc nghiệm, hãy giải thích vì sao đáp án đúng và vì sao các phương án còn lại sai.</div>
+      </div>
+    </div>
+    <div class="study-panel reveal" style="margin-top:22px">
+      <h3>📝 Sổ học tập theo môn</h3>
+      <div class="tools-row">
+        <label class="grow">Môn<select id="notesSubject"><option value="math">Toán học</option><option value="literature">Ngữ văn</option><option value="english">Tiếng Anh</option><option value="physics">Vật lý</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="history">Lịch sử</option><option value="geography">Địa lý</option><option value="civics">Giáo dục kinh tế & pháp luật</option><option value="informatics">Tin học</option></select></label>
+        <label class="grow">Ghi chú / công thức / điều cần nhớ<textarea id="studyNotes" rows="4" maxlength="12000" placeholder="Ghi lại kiến thức bằng lời của bạn..."></textarea></label>
+        <button class="btn" id="saveNotes" type="button">Lưu ghi chú</button>
+      </div>
+      <p class="source-note">Ghi chú được lưu cục bộ trên trình duyệt của thiết bị này.</p>
+    </div>
+    <div class="study-panel reveal" style="margin-top:22px">
+      <h3>📌 Danh sách bài tập</h3>
+      <form id="homeworkForm" class="homework-form">
+        <label>Môn<select id="homeworkSubject"><option value="math">Toán học</option><option value="literature">Ngữ văn</option><option value="english">Tiếng Anh</option><option value="physics">Vật lý</option><option value="chemistry">Hóa học</option><option value="biology">Sinh học</option><option value="history">Lịch sử</option><option value="geography">Địa lý</option><option value="civics">Giáo dục kinh tế & pháp luật</option><option value="informatics">Tin học</option></select></label>
+        <label class="grow">Bài tập<input id="homeworkTitle" required maxlength="220" placeholder="Tên bài / trang / câu hỏi"></label>
+        <label>Hạn nộp<input id="homeworkDue" type="date"></label>
+        <button class="btn" type="submit">＋ Thêm bài</button>
+      </form>
+      <div id="homeworkList" class="homework-list"></div>
+    </div>
+    <div class="study-panel reveal" style="margin-top:22px">
+      <h3>📚 Nguồn học liệu được ưu tiên</h3>
+      <div class="source-grid">
+        <a href="https://moet.gov.vn/" target="_blank" rel="noopener noreferrer"><strong>Bộ Giáo dục và Đào tạo</strong><span>Chương trình, thông tin và văn bản chính thức.</span></a>
+        <a href="https://hanhtrangso.nxbgd.vn/" target="_blank" rel="noopener noreferrer"><strong>Hành trang số – NXBGD Việt Nam</strong><span>Học liệu số từ Nhà xuất bản Giáo dục Việt Nam.</span></a>
+        <a href="https://hoclieu.vn/" target="_blank" rel="noopener noreferrer"><strong>Học liệu số</strong><span>Tra cứu học liệu; quyền truy cập tùy nội dung/đơn vị cung cấp.</span></a>
+        <a href="https://www.khanacademy.org/" target="_blank" rel="noopener noreferrer"><strong>Khan Academy</strong><span>Bài học và luyện tập, đặc biệt Toán và khoa học.</span></a>
+        <a href="https://openstax.org/" target="_blank" rel="noopener noreferrer"><strong>OpenStax</strong><span>Sách giáo khoa mở; kiểm tra giấy phép từng tài liệu.</span></a>
+        <a href="https://phet.colorado.edu/" target="_blank" rel="noopener noreferrer"><strong>PhET</strong><span>Mô phỏng tương tác khoa học và Toán.</span></a>
+        <a href="https://learnenglish.britishcouncil.org/" target="_blank" rel="noopener noreferrer"><strong>British Council LearnEnglish</strong><span>Tài liệu luyện tiếng Anh.</span></a>
+      </div>
+      <p class="source-note">Phạm vi thiết kế: kiến thức THPT lớp 10–12 và ôn thi đại học. Hãy tuân thủ điều khoản, giấy phép và quyền truy cập của từng nguồn; website chỉ dẫn đường/tìm kiếm, không tự tải hoặc tái phát hành tài liệu.</p>
+    </div>
+  </div>
 </section>
 
 <!-- TÀI LIỆU -->
@@ -705,7 +817,7 @@ section[id] { scroll-margin-top:90px; }
                 <option value="toán">Toán</option><option value="ngữ văn">Ngữ văn</option>
                 <option value="tiếng anh">Tiếng Anh</option><option value="vật lý">Vật lý</option>
                 <option value="hóa">Hóa học</option><option value="sinh">Sinh học</option>
-                <option value="khác">Khác</option>
+                <option value="khác">Khác</option><option value="lịch sử">Lịch sử</option><option value="địa lý">Địa lý</option><option value="giáo dục">Giáo dục kinh tế & pháp luật</option><option value="tin học">Tin học</option>
             </select>
             <button class="btn" id="addDocumentBtn" type="button">＋ Thêm tài liệu</button>
         </div>
@@ -876,7 +988,7 @@ section[id] { scroll-margin-top:90px; }
     <p>Tài liệu mới được lưu trên trình duyệt này. Để chia sẻ cho mọi người cần kết nối backend.</p>
     <form id="documentForm">
       <label>Tên tài liệu<input name="title" required maxlength="120" placeholder="Ví dụ: Đề cương ôn tập học kỳ"></label>
-      <label>Môn học<select name="subject" required><option value="">Chọn môn</option><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Vật lý</option><option>Hóa học</option><option>Sinh học</option><option>Khác</option></select></label>
+      <label>Môn học<select name="subject" required><option value="">Chọn môn</option><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Vật lý</option><option>Hóa học</option><option>Sinh học</option><option>Lịch sử</option><option>Địa lý</option><option>Giáo dục kinh tế & pháp luật</option><option>Tin học</option><option>Khác</option></select></label>
       <label>Mô tả<input name="description" maxlength="220" placeholder="Mô tả ngắn"></label>
       <label>Liên kết tài liệu (URL)<input name="url" type="url" placeholder="https://..."></label>
       <div class="modal-actions"><button class="btn" type="submit">Lưu tài liệu</button><button class="small-btn" type="button" data-close="documentModal">Hủy</button></div>
@@ -981,6 +1093,50 @@ documentList.addEventListener("click", e => {
   userDocs = userDocs.filter(doc => doc.id !== button.dataset.id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(userDocs)); renderDocuments(); toast("Đã xóa tài liệu.");
 });
+
+// ===== CÁC NGĂN MÔN HỌC, TRA CỨU VÀ CÔNG CỤ HỌC =====
+const subjectNames = {math:"Toán học",literature:"Ngữ văn",english:"Tiếng Anh",physics:"Vật lý",chemistry:"Hóa học",biology:"Sinh học",history:"Lịch sử",geography:"Địa lý",civics:"Giáo dục kinh tế & pháp luật",informatics:"Tin học"};
+const sourceDomains = {
+  math:["hanhtrangso.nxbgd.vn","hoclieu.vn","khanacademy.org","openstax.org"],
+  literature:["hanhtrangso.nxbgd.vn","hoclieu.vn","moet.gov.vn"],
+  english:["hanhtrangso.nxbgd.vn","hoclieu.vn","learnenglish.britishcouncil.org","khanacademy.org"],
+  physics:["hanhtrangso.nxbgd.vn","hoclieu.vn","phet.colorado.edu","openstax.org","khanacademy.org"],
+  chemistry:["hanhtrangso.nxbgd.vn","hoclieu.vn","phet.colorado.edu","openstax.org","khanacademy.org"],
+  biology:["hanhtrangso.nxbgd.vn","hoclieu.vn","openstax.org","khanacademy.org"],
+  history:["hanhtrangso.nxbgd.vn","hoclieu.vn","moet.gov.vn"],
+  geography:["hanhtrangso.nxbgd.vn","hoclieu.vn","moet.gov.vn"],
+  civics:["hanhtrangso.nxbgd.vn","hoclieu.vn","moet.gov.vn"],
+  informatics:["hanhtrangso.nxbgd.vn","hoclieu.vn","khanacademy.org","openstax.org"]
+};
+const studySubject = $("#studySubject"), studyGrade = $("#studyGrade"), studyTopic = $("#studyTopic");
+$$(".subject-open").forEach(button => button.addEventListener("click",()=>{
+  studySubject.value=button.dataset.subject; $("#notesSubject").value=button.dataset.subject; $("#homeworkSubject").value=button.dataset.subject;
+  loadNotes(); document.querySelector("#study").scrollIntoView({behavior:"smooth"}); studyTopic.focus({preventScroll:true});
+}));
+$("#studySearchForm").addEventListener("submit",e=>{
+  e.preventDefault(); const subject=studySubject.value, topic=studyTopic.value.trim(), grade=studyGrade.value;
+  if(!topic) return;
+  const query=encodeURIComponent(`${subjectNames[subject]} ${grade} ${topic} bài học kiến thức công thức bài tập`);
+  const domains=sourceDomains[subject]||["hanhtrangso.nxbgd.vn","hoclieu.vn","moet.gov.vn"];
+  // Một tab duy nhất để tránh bị trình duyệt chặn cửa sổ bật lên.
+  const siteQuery=domains.map(domain=>`site:${domain}`).join(" OR ");
+  window.open(`https://www.google.com/search?q=${encodeURIComponent("("+siteQuery+") ")+query}`,"_blank","noopener,noreferrer");
+  toast(`Đã mở tìm kiếm cho ${subjectNames[subject]} – ${grade}.`);
+});
+const NOTES_KEY="dangky12a7_study_notes_v1";
+function readNotes(){try{return JSON.parse(localStorage.getItem(NOTES_KEY)||"{}");}catch{return {};}}
+function loadNotes(){const notes=readNotes(); $("#studyNotes").value=notes[$("#notesSubject").value]||"";}
+$("#notesSubject").addEventListener("change",loadNotes);
+$("#saveNotes").addEventListener("click",()=>{const notes=readNotes();notes[$("#notesSubject").value]=$("#studyNotes").value;localStorage.setItem(NOTES_KEY,JSON.stringify(notes));toast("Đã lưu ghi chú môn học trên thiết bị này.");});
+const HOMEWORK_KEY="dangky12a7_homework_v1";
+function readHomework(){try{const list=JSON.parse(localStorage.getItem(HOMEWORK_KEY)||"[]");return Array.isArray(list)?list:[];}catch{return [];}}
+function renderHomework(){const list=$("#homeworkList");list.innerHTML="";const tasks=readHomework().sort((a,b)=>(a.done?1:0)-(b.done?1:0));
+ if(!tasks.length){list.innerHTML='<p class="source-note">Chưa có bài tập. Thêm bài ở biểu mẫu phía trên.</p>';return;}
+ tasks.forEach(task=>{const row=document.createElement("div");row.className="homework-item"+(task.done?" done":"");row.innerHTML=`<input type="checkbox" aria-label="Đánh dấu hoàn thành" ${task.done?"checked":""}><div class="homework-title"><strong>${escapeHTML(task.title)}</strong><span class="homework-meta">${escapeHTML(subjectNames[task.subject]||task.subject)}${task.due?" · Hạn: "+escapeHTML(task.due):""}</span></div><button class="small-btn" type="button">Xóa</button>`;
+ row.querySelector("input").addEventListener("change",()=>{const all=readHomework(),item=all.find(x=>x.id===task.id);if(item)item.done=row.querySelector("input").checked;localStorage.setItem(HOMEWORK_KEY,JSON.stringify(all));renderHomework();});
+ row.querySelector("button").addEventListener("click",()=>{localStorage.setItem(HOMEWORK_KEY,JSON.stringify(readHomework().filter(x=>x.id!==task.id)));renderHomework();});list.appendChild(row);});}
+$("#homeworkForm").addEventListener("submit",e=>{e.preventDefault();const tasks=readHomework();tasks.push({id:"hw-"+Date.now(),subject:$("#homeworkSubject").value,title:$("#homeworkTitle").value.trim(),due:$("#homeworkDue").value,done:false});localStorage.setItem(HOMEWORK_KEY,JSON.stringify(tasks));e.currentTarget.reset();renderHomework();toast("Đã thêm bài tập vào danh sách.");});
+loadNotes();renderHomework();
 
 // ===== TÌM KIẾM TOÀN TRANG =====
 $("#openSearch").addEventListener("click", () => openModal("searchModal"));
