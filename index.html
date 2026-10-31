@@ -5,16 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111111">
-<title>Dangky12a7 | Không ngừng vươn xa</title>
+<title>ĐẶNG KỲ 12A7 | Không ngừng vươn xa</title>
 
 <style>
 /* ===== CÀI ĐẶT CHUNG ===== */
 :root {
-    --bg: #111111;
-    --card: #1c1c1c;
-    --yellow: #f5c518;
-    --white: #ffffff;
-    --gray: #aaaaaa;
+    --bg: #071426;
+    --card: #10243b;
+    --yellow: #38a9ff;
+    --white: #f4f9ff;
+    --gray: #b7c9dc;
 }
 
 * {
@@ -69,7 +69,7 @@ header {
     top: 0;
     z-index: 1000;
     background: rgba(17,17,17,0.95);
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #23405d;
     backdrop-filter: blur(10px);
 }
 
@@ -120,7 +120,7 @@ header {
     align-items: center;
     padding-top: 100px;
     background:
-      radial-gradient(circle at 80% 40%, #3b3010 0%, transparent 35%),
+      radial-gradient(circle at 80% 40%, #123b67 0%, transparent 35%),
       #111;
 }
 
@@ -238,7 +238,7 @@ header {
     background: var(--card);
     padding: 28px;
     border-radius: 13px;
-    border: 1px solid #333;
+    border: 1px solid #23405d;
     transition: .3s;
 }
 
@@ -280,7 +280,7 @@ header {
     padding: 15px;
     background: var(--card);
     color: white;
-    border: 1px solid #444;
+    border: 1px solid #31516f;
     border-radius: 8px;
     outline: none;
 }
@@ -310,7 +310,7 @@ header {
     width: 90px;
     height: 90px;
     margin: 0 auto 15px;
-    background: #302a15;
+    background: #12375a;
     border: 2px solid var(--yellow);
     border-radius: 50%;
     display: grid;
@@ -341,7 +341,7 @@ header {
 footer {
     padding: 30px 0;
     text-align: center;
-    border-top: 1px solid #333;
+    border-top: 1px solid #23405d;
     color: var(--gray);
     font-size: 13px;
 }
@@ -373,7 +373,7 @@ footer span {
         top: 75px;
         left: 0;
         width: 100%;
-        background: #191919;
+        background: #0c1c30;
         display: none;
         flex-direction: column;
         gap: 0;
@@ -386,7 +386,7 @@ footer span {
 
     .nav-links li {
         padding: 13px 0;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #23405d;
     }
 
     .about-grid {
@@ -423,6 +423,75 @@ footer span {
         align-items: flex-start;
     }
 }
+
+/* ===== NÂNG CẤP GIAO DIỆN ===== */
+html { scroll-padding-top: 88px; }
+body { background-image: radial-gradient(ellipse at 10% 0%, rgba(30,136,229,.10), transparent 38%); }
+header { box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+.navbar { gap: 18px; }
+.nav-tools { display:flex; align-items:center; gap:10px; }
+.nav-search-btn, .icon-btn {
+    border:1px solid rgba(120,190,255,.35); background:rgba(25,70,112,.35);
+    color:var(--white); border-radius:10px; padding:10px 13px; cursor:pointer;
+    transition:transform .2s, background .2s, border-color .2s;
+}
+.nav-search-btn:hover, .icon-btn:hover { transform:translateY(-2px); background:rgba(30,136,229,.22); border-color:var(--yellow); }
+.hero { background: radial-gradient(circle at 82% 35%, rgba(30,136,229,.28), transparent 34%), linear-gradient(135deg,#071426 0%,#0a2340 55%,#071426 100%); }
+.hero-label { border-color:rgba(56,169,255,.65); background:rgba(30,136,229,.08); }
+.btn { box-shadow:0 8px 24px rgba(30,136,229,.16); }
+.card, .stat, .about-box, .contact-box { box-shadow:0 12px 35px rgba(0,0,0,.12); }
+.card:hover { box-shadow:0 18px 40px rgba(30,136,229,.13); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline:3px solid #8bd0ff; outline-offset:3px;
+}
+section[id] { scroll-margin-top:90px; }
+.feature-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:35px; }
+.feature-pill { background:rgba(20,65,105,.35); border:1px solid rgba(100,180,245,.18); border-radius:14px; padding:18px; color:#d8eaff; }
+.feature-pill strong { display:block; color:#7fcaff; margin-bottom:5px; }
+.tools-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:0 auto 25px; }
+.tools-row input, .tools-row select, .modal input, .modal select, .modal textarea {
+    width:100%; padding:13px 14px; border-radius:9px; border:1px solid #31516f;
+    background:#0a1a2d; color:var(--white); font:inherit;
+}
+.tools-row input { max-width:520px; }
+.tools-row select { max-width:220px; }
+.document-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+.small-btn { border:1px solid rgba(56,169,255,.45); color:#9bd7ff; background:rgba(30,136,229,.08); padding:8px 12px; border-radius:8px; cursor:pointer; }
+.small-btn:hover { background:rgba(30,136,229,.2); }
+.modal-backdrop { position:fixed; inset:0; z-index:2000; display:none; place-items:center; padding:18px; background:rgba(2,10,20,.72); backdrop-filter:blur(8px); }
+.modal-backdrop.open { display:grid; }
+.modal { width:min(100%,560px); max-height:90vh; overflow:auto; background:#0d2036; border:1px solid #31516f; border-radius:18px; padding:25px; box-shadow:0 24px 80px rgba(0,0,0,.45); }
+.modal h2 { margin-bottom:8px; }
+.modal p { color:var(--gray); margin-bottom:18px; }
+.modal form { display:grid; gap:13px; }
+.modal label { display:grid; gap:6px; color:#d7e8f8; font-size:14px; }
+.modal textarea { min-height:110px; resize:vertical; }
+.modal-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:4px; }
+.search-results { display:grid; gap:10px; margin-top:15px; }
+.search-result { display:block; padding:13px; border:1px solid #31516f; border-radius:10px; background:#10243b; }
+.search-result small { display:block; color:var(--gray); margin-top:3px; }
+.toast { position:fixed; z-index:3000; bottom:22px; left:50%; transform:translate(-50%,20px); opacity:0; pointer-events:none; background:#102b47; color:#eff8ff; border:1px solid #3b8bc9; padding:12px 18px; border-radius:12px; box-shadow:0 12px 35px rgba(0,0,0,.3); transition:.25s; max-width:calc(100% - 30px); }
+.toast.show { opacity:1; transform:translate(-50%,0); }
+@media(max-width:768px) {
+    .navbar { height:68px; }
+    .nav-tools { gap:6px; }
+    .nav-search-btn { padding:9px 10px; }
+    .nav-links { top:68px; }
+    .feature-strip { grid-template-columns:1fr; }
+    .hero { padding-top:110px; }
+    .section-title { line-height:1.25; }
+}
+@media(max-width:500px) {
+    .logo { font-size:18px; }
+    .nav-search-btn { font-size:0; }
+    .nav-search-btn::after { content:"⌕"; font-size:22px; }
+    .modal { padding:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+    *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    .reveal { opacity:1; transform:none; }
+}
+
 </style>
 </head>
 
@@ -432,11 +501,15 @@ footer span {
 <header>
     <div class="container navbar">
         <a href="#home" class="logo">
-            DANGKY<span>12A7</span>
+            ĐẶNG KỲ<span>12A7</span>
         </a>
 
-        <button class="menu-btn" id="menuBtn"
-        aria-label="Mở menu" aria-expanded="false">☰</button>
+        <div class="nav-tools">
+            <button class="nav-search-btn" id="openSearch" aria-label="Mở tìm kiếm nhanh">⌕ Tìm kiếm</button>
+            <button class="icon-btn" id="openReport" aria-label="Báo cáo lỗi" title="Báo cáo lỗi">⚑</button>
+            <button class="menu-btn" id="menuBtn"
+            aria-label="Mở menu" aria-expanded="false">☰</button>
+        </div>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Trang chủ</a></li>
@@ -455,7 +528,7 @@ footer span {
         <div class="hero-content reveal">
 
             <span class="hero-label">
-                WELCOME TO DANGKY12A7
+                WELCOME TO ĐẶNG KỲ 12A7
             </span>
 
             <h1>
@@ -483,6 +556,19 @@ footer span {
     </div>
 </section>
 
+<!-- HỌC TẬP & CỔ VŨ -->
+<section id="inspiration">
+    <div class="container">
+        <h2 class="section-title reveal">CÙNG NHAU <span class="highlight">TIẾN BỘ</span></h2>
+        <p class="section-desc reveal">Một chút động lực, một bước gần hơn đến mục tiêu.</p>
+        <div class="feature-strip">
+            <div class="feature-pill reveal"><strong>💡 Mẹo học tập</strong>Chia bài học thành những phiên 25 phút, nghỉ ngắn giữa các phiên và ôn lại kiến thức bằng cách tự kiểm tra.</div>
+            <div class="feature-pill reveal"><strong>🌱 Nhắc nhở hôm nay</strong>Không cần hoàn hảo ngay từ đầu. Chỉ cần tiến bộ hơn hôm qua một chút.</div>
+            <div class="feature-pill reveal"><strong>🤝 Cùng nhau</strong>Hỏi khi chưa hiểu, chia sẻ điều mình biết và cổ vũ bạn bè cùng cố gắng.</div>
+        </div>
+    </div>
+</section>
+
 <!-- GIỚI THIỆU -->
 <section id="about">
     <div class="container">
@@ -501,7 +587,7 @@ footer span {
                 <h3>Xin chào, chúng mình là 12A7!</h3>
 
                 <p>
-                    Dangky12a7 là website được xây dựng
+                    ĐẶNG KỲ 12A7 là website được xây dựng
                     nhằm tạo ra một không gian học tập,
                     chia sẻ tài liệu và lưu giữ những
                     khoảnh khắc đáng nhớ của tập thể lớp.
@@ -612,13 +698,16 @@ footer span {
             Tìm kiếm tài liệu học tập nhanh chóng.
         </p>
 
-        <div class="search-box reveal">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="🔍 Tìm kiếm tài liệu..."
-                aria-label="Tìm kiếm tài liệu"
-            >
+        <div class="tools-row reveal">
+            <input type="search" id="searchInput" placeholder="🔍 Tìm tài liệu theo tên, môn học..." aria-label="Tìm kiếm tài liệu">
+            <select id="subjectFilter" aria-label="Lọc theo môn học">
+                <option value="">Tất cả môn học</option>
+                <option value="toán">Toán</option><option value="ngữ văn">Ngữ văn</option>
+                <option value="tiếng anh">Tiếng Anh</option><option value="vật lý">Vật lý</option>
+                <option value="hóa">Hóa học</option><option value="sinh">Sinh học</option>
+                <option value="khác">Khác</option>
+            </select>
+            <button class="btn" id="addDocumentBtn" type="button">＋ Thêm tài liệu</button>
         </div>
 
         <div class="grid" id="documentList">
@@ -628,7 +717,7 @@ footer span {
                 <div>
                     <h3>📐 Công thức Toán</h3>
                     <p>Tổng hợp công thức quan trọng.</p>
-                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                    <a href="#documents" class="file-link">Chưa có file — thêm tài liệu →</a>
                 </div>
                 <span>PDF</span>
             </div>
@@ -638,7 +727,7 @@ footer span {
                 <div>
                     <h3>📖 Tài liệu Ngữ văn</h3>
                     <p>Tổng hợp kiến thức và tác phẩm.</p>
-                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                    <a href="#documents" class="file-link">Chưa có file — thêm tài liệu →</a>
                 </div>
                 <span>PDF</span>
             </div>
@@ -648,7 +737,7 @@ footer span {
                 <div>
                     <h3>🌍 Tiếng Anh</h3>
                     <p>Ngữ pháp và từ vựng.</p>
-                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                    <a href="#documents" class="file-link">Chưa có file — thêm tài liệu →</a>
                 </div>
                 <span>PDF</span>
             </div>
@@ -658,7 +747,7 @@ footer span {
                 <div>
                     <h3>⚛️ Bài tập Vật lý</h3>
                     <p>Bài tập và lời giải tham khảo.</p>
-                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                    <a href="#documents" class="file-link">Chưa có file — thêm tài liệu →</a>
                 </div>
                 <span>PDF</span>
             </div>
@@ -668,7 +757,7 @@ footer span {
                 <div>
                     <h3>🧪 Hóa học</h3>
                     <p>Phương trình và bài tập hóa học.</p>
-                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                    <a href="#documents" class="file-link">Chưa có file — thêm tài liệu →</a>
                 </div>
                 <span>PDF</span>
             </div>
@@ -678,7 +767,7 @@ footer span {
                 <div>
                     <h3>🧬 Sinh học</h3>
                     <p>Kiến thức sinh học tổng hợp.</p>
-                    <a href="#" class="file-link">Thêm tài liệu →</a>
+                    <a href="#documents" class="file-link">Chưa có file — thêm tài liệu →</a>
                 </div>
                 <span>PDF</span>
             </div>
@@ -745,7 +834,7 @@ footer span {
 
             <p>
                 Cảm ơn bạn đã ghé thăm website
-                Dangky12a7. Hãy cùng nhau viết tiếp
+                ĐẶNG KỲ 12A7. Hãy cùng nhau viết tiếp
                 những kỷ niệm tuyệt đẹp!
             </p>
 
@@ -761,83 +850,208 @@ footer span {
 <footer>
     <div class="container">
         <p>
-            © 2026 <span>DANGKY12A7</span> |
+            © 2026 <span>ĐẶNG KỲ 12A7</span> |
             Designed with ❤️
         </p>
         <p>Học tập hôm nay – Thành công ngày mai.</p>
     </div>
 </footer>
 
+
+<!-- TÌM KIẾM NHANH -->
+<div class="modal-backdrop" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="quickSearchTitle">
+  <div class="modal">
+    <h2 id="quickSearchTitle">Tìm kiếm nhanh</h2>
+    <p>Tìm trong tài liệu, môn học và các mục trên website.</p>
+    <input type="search" id="globalSearchInput" placeholder="Nhập từ khóa..." aria-label="Tìm kiếm toàn website">
+    <div class="search-results" id="globalSearchResults"></div>
+    <div class="modal-actions"><button class="small-btn" data-close="searchModal">Đóng (Esc)</button></div>
+  </div>
+</div>
+
+<!-- THÊM TÀI LIỆU -->
+<div class="modal-backdrop" id="documentModal" role="dialog" aria-modal="true" aria-labelledby="documentModalTitle">
+  <div class="modal">
+    <h2 id="documentModalTitle">Thêm tài liệu</h2>
+    <p>Tài liệu mới được lưu trên trình duyệt này. Để chia sẻ cho mọi người cần kết nối backend.</p>
+    <form id="documentForm">
+      <label>Tên tài liệu<input name="title" required maxlength="120" placeholder="Ví dụ: Đề cương ôn tập học kỳ"></label>
+      <label>Môn học<select name="subject" required><option value="">Chọn môn</option><option>Toán</option><option>Ngữ văn</option><option>Tiếng Anh</option><option>Vật lý</option><option>Hóa học</option><option>Sinh học</option><option>Khác</option></select></label>
+      <label>Mô tả<input name="description" maxlength="220" placeholder="Mô tả ngắn"></label>
+      <label>Liên kết tài liệu (URL)<input name="url" type="url" placeholder="https://..."></label>
+      <div class="modal-actions"><button class="btn" type="submit">Lưu tài liệu</button><button class="small-btn" type="button" data-close="documentModal">Hủy</button></div>
+    </form>
+  </div>
+</div>
+
+<!-- BÁO CÁO LỖI -->
+<div class="modal-backdrop" id="reportModal" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+  <div class="modal">
+    <h2 id="reportModalTitle">Báo cáo lỗi</h2>
+    <p>Mô tả sự cố để nhóm quản trị kiểm tra. Báo cáo được lưu trên thiết bị này; chưa tự gửi lên máy chủ.</p>
+    <form id="reportForm">
+      <label>Loại lỗi<select name="type"><option>Giao diện hiển thị</option><option>Liên kết/tài liệu hỏng</option><option>Tìm kiếm</option><option>Khác</option></select></label>
+      <label>Mô tả<textarea name="description" required maxlength="1000" placeholder="Bạn gặp lỗi gì? Các bước để tái hiện..."></textarea></label>
+      <div class="modal-actions"><button class="btn" type="submit">Lưu báo cáo</button><button class="small-btn" type="button" id="exportReports">Xuất báo cáo JSON</button><button class="small-btn" type="button" data-close="reportModal">Đóng</button></div>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
+
+// ===== TIỆN ÍCH =====
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+const normalizeText = value => (value || "").toString().toLowerCase()
+  .normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").trim();
+const toast = message => {
+  const el = $("#toast"); el.textContent = message; el.classList.add("show");
+  clearTimeout(toast.timer); toast.timer = setTimeout(() => el.classList.remove("show"), 3200);
+};
+const openModal = id => { const modal = document.getElementById(id); modal.classList.add("open"); const input = modal.querySelector("input,textarea,select,button"); if(input) setTimeout(()=>input.focus(),50); };
+const closeModal = id => document.getElementById(id).classList.remove("open");
+$$("[data-close]").forEach(button => button.addEventListener("click", () => closeModal(button.dataset.close)));
+$$(".modal-backdrop").forEach(backdrop => backdrop.addEventListener("click", e => { if(e.target === backdrop) backdrop.classList.remove("open"); }));
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") $$(".modal-backdrop.open").forEach(modal => modal.classList.remove("open"));
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") { e.preventDefault(); openModal("searchModal"); }
+});
+
 // ===== MENU ĐIỆN THOẠI =====
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
+const menuBtn = $("#menuBtn"), navLinks = $("#navLinks");
 menuBtn.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("active");
-    menuBtn.textContent = isOpen ? "✕" : "☰";
-    menuBtn.setAttribute("aria-expanded", isOpen);
+  const isOpen = navLinks.classList.toggle("active");
+  menuBtn.textContent = isOpen ? "✕" : "☰";
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
+});
+$$(".nav-links a").forEach(link => link.addEventListener("click", () => {
+  navLinks.classList.remove("active"); menuBtn.textContent = "☰"; menuBtn.setAttribute("aria-expanded","false");
+}));
+
+// ===== KHO TÀI LIỆU + LOCAL STORAGE =====
+const STORAGE_KEY = "dangky12a7_documents_v1";
+const originalDocs = $$(".document").map((el, index) => ({
+  id: "seed-" + index, title: el.querySelector("h3").textContent.replace(/^[^\wÀ-ỹ]+/,"").trim(),
+  subject: el.dataset.name.split(" ")[0], description: el.querySelector("p").textContent,
+  url: "", builtIn: true
+}));
+let userDocs = [];
+try { userDocs = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); if(!Array.isArray(userDocs)) userDocs=[]; } catch { userDocs=[]; }
+const documentList = $("#documentList");
+const escapeHTML = text => String(text).replace(/[&<>"']/g, ch => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[ch]));
+function renderDocuments() {
+  documentList.innerHTML = "";
+  const all = [...originalDocs, ...userDocs];
+  all.forEach(doc => {
+    const card = document.createElement("article");
+    card.className = "card document reveal";
+    card.dataset.name = normalizeText([doc.title,doc.subject,doc.description].join(" "));
+    const safeUrl = doc.url && /^https?:\/\//i.test(doc.url) ? doc.url : "";
+    card.innerHTML = `<div><h3>${escapeHTML(doc.title)}</h3><p>${escapeHTML(doc.description || doc.subject || "Tài liệu học tập")}</p>
+      <div class="document-actions">${safeUrl ? `<a class="small-btn" href="${escapeHTML(safeUrl)}" target="_blank" rel="noopener noreferrer">Mở tài liệu ↗</a>` : `<span class="small-btn" aria-disabled="true">Chưa có liên kết</span>`}
+      ${doc.builtIn ? "" : `<button class="small-btn delete-doc" data-id="${escapeHTML(doc.id)}" type="button">Xóa</button>`}</div></div><span>📄</span>`;
+    documentList.appendChild(card);
+  });
+  applyDocumentFilters();
+  observeReveals(documentList.querySelectorAll(".reveal"));
+}
+function applyDocumentFilters() {
+  const keyword = normalizeText($("#searchInput").value);
+  const subject = normalizeText($("#subjectFilter").value);
+  let count = 0;
+  $$(".document", documentList).forEach(card => {
+    const matches = normalizeText(card.dataset.name).includes(keyword) && (!subject || normalizeText(card.dataset.name).includes(subject));
+    card.hidden = !matches; if(matches) count++;
+  });
+  $("#emptyMessage").style.display = count ? "none" : "block";
+}
+$("#searchInput").addEventListener("input", applyDocumentFilters);
+$("#subjectFilter").addEventListener("change", applyDocumentFilters);
+$("#addDocumentBtn").addEventListener("click", () => openModal("documentModal"));
+$("#documentForm").addEventListener("submit", e => {
+  e.preventDefault(); const data = new FormData(e.currentTarget);
+  const url = (data.get("url") || "").trim();
+  if(url && !/^https?:\/\//i.test(url)) { toast("Liên kết phải bắt đầu bằng http:// hoặc https://"); return; }
+  userDocs.push({ id: "doc-" + Date.now(), title: data.get("title").trim(), subject: data.get("subject"), description: data.get("description").trim(), url });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(userDocs)); e.currentTarget.reset(); closeModal("documentModal"); renderDocuments(); toast("Đã lưu tài liệu trên thiết bị này.");
+});
+documentList.addEventListener("click", e => {
+  const button = e.target.closest(".delete-doc"); if(!button) return;
+  userDocs = userDocs.filter(doc => doc.id !== button.dataset.id);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(userDocs)); renderDocuments(); toast("Đã xóa tài liệu.");
 });
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        menuBtn.textContent = "☰";
-        menuBtn.setAttribute("aria-expanded", "false");
-    });
+// ===== TÌM KIẾM TOÀN TRANG =====
+$("#openSearch").addEventListener("click", () => openModal("searchModal"));
+const searchable = [
+  ...$$("section[id]").map(section => ({title: section.querySelector("h1,h2")?.innerText || section.id, text: section.innerText, href: "#"+section.id, type:"Mục website"})),
+];
+function renderGlobalSearch() {
+  const query = normalizeText($("#globalSearchInput").value), results = $("#globalSearchResults");
+  results.innerHTML = ""; if(!query) return;
+  const candidates = [
+    ...searchable,
+    ...[...originalDocs,...userDocs].map(doc => ({title:doc.title,text:[doc.subject,doc.description].join(" "),href:"#documents",type:"Tài liệu"}))
+  ].filter(item => normalizeText(item.title+" "+item.text).includes(query)).slice(0,12);
+  if(!candidates.length) { results.innerHTML = "<p>Không tìm thấy kết quả phù hợp.</p>"; return; }
+  candidates.forEach(item => {
+    const a = document.createElement("a"); a.className="search-result"; a.href=item.href;
+    a.innerHTML=`<strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.type)}</small>`;
+    a.addEventListener("click",()=>closeModal("searchModal")); results.appendChild(a);
+  });
+}
+$("#globalSearchInput").addEventListener("input", renderGlobalSearch);
+
+// ===== BÁO CÁO LỖI =====
+$("#openReport").addEventListener("click", () => openModal("reportModal"));
+const REPORT_KEY = "dangky12a7_reports_v1";
+$("#reportForm").addEventListener("submit", e => {
+  e.preventDefault(); const data = new FormData(e.currentTarget);
+  let reports=[]; try { reports=JSON.parse(localStorage.getItem(REPORT_KEY)||"[]"); } catch {}
+  reports.push({type:data.get("type"),description:data.get("description").trim(),page:location.href,createdAt:new Date().toISOString(),userAgent:navigator.userAgent});
+  localStorage.setItem(REPORT_KEY,JSON.stringify(reports)); e.currentTarget.reset(); closeModal("reportModal");
+  toast("Đã lưu báo cáo trên thiết bị. Hãy xuất JSON để gửi quản trị viên.");
+});
+$("#exportReports").addEventListener("click", () => {
+  const data = localStorage.getItem(REPORT_KEY) || "[]";
+  const blob = new Blob([data],{type:"application/json"}), url=URL.createObjectURL(blob), a=document.createElement("a");
+  a.href=url; a.download="bao-cao-loi.json"; a.click(); URL.revokeObjectURL(url);
 });
 
-// ===== TÌM KIẾM TÀI LIỆU =====
-const searchInput = document.getElementById("searchInput");
-const documents = document.querySelectorAll(".document");
-const emptyMessage = document.getElementById("emptyMessage");
-
-searchInput.addEventListener("input", () => {
-    const keyword = searchInput.value
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d");
-
-    let count = 0;
-
-    documents.forEach(doc => {
-        const name = (
-            doc.dataset.name + " " + doc.innerText
-        ).toLowerCase()
-         .normalize("NFD")
-         .replace(/[\u0300-\u036f]/g, "")
-         .replace(/đ/g, "d");
-
-        const matched = name.includes(keyword);
-
-        doc.style.display = matched ? "" : "none";
-
-        if (matched) count++;
-    });
-
-    emptyMessage.style.display = count ? "none" : "block";
+// ===== KIỂM TRA TỰ ĐỘNG AN TOÀN =====
+window.addEventListener("error", event => {
+  try {
+    const errors=JSON.parse(localStorage.getItem("dangky12a7_runtime_errors_v1")||"[]");
+    errors.push({message:event.message,source:event.filename,line:event.lineno,time:new Date().toISOString()});
+    localStorage.setItem("dangky12a7_runtime_errors_v1",JSON.stringify(errors.slice(-30)));
+  } catch {}
 });
+function runDiagnostics() {
+  let missing=0;
+  $$("a[href]").forEach(link => {
+    const href=link.getAttribute("href");
+    if(href && href.startsWith("#") && href.length>1 && !document.getElementById(href.slice(1))) missing++;
+  });
+  if(missing) console.warn(`Tự kiểm tra: phát hiện ${missing} liên kết nội bộ không có đích.`);
+}
+runDiagnostics();
 
 // ===== HIỆU ỨNG XUẤT HIỆN =====
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.12
-});
+let observer;
+function observeReveals(items) {
+  if(!("IntersectionObserver" in window)) { items.forEach(item=>item.classList.add("show")); return; }
+  if(!observer) observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if(entry.isIntersecting) { entry.target.classList.add("show"); observer.unobserve(entry.target); }
+  }),{threshold:.12});
+  items.forEach(item => observer.observe(item));
+}
+observeReveals($$(".reveal"));
 
-document.querySelectorAll(".reveal").forEach(item => {
-    observer.observe(item);
-});
-
-// ===== NĂM TỰ ĐỘNG =====
-document.querySelector("footer p").innerHTML =
-    `© ${new Date().getFullYear()} <span>DANGKY12A7</span> | Designed with ❤️`;
+// ===== FOOTER =====
+const footerText = $("footer p");
+if(footerText) footerText.innerHTML = `© ${new Date().getFullYear()} <span>ĐẶNG KỲ 12A7</span> | Designed with ❤️`;
+renderDocuments();
 
 </script>
 
